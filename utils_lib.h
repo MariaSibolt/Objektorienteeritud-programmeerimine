@@ -1,8 +1,0 @@
-#pragma once
-
-namespace utils{
-    int max(int a, int b);
-    double max(double a, double b);
-    int power(int base, int exponent =2);
-    bool isEven(int number);
-}
