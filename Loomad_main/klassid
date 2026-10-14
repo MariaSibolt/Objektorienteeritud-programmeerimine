@@ -1,0 +1,50 @@
+#pragma once
+#include "loomad.h"
+
+// KARU
+class Karu : public Loom
+{
+public:
+    Karu(string n, float k, float v)
+        : Loom(n, k, v, "liha") {}
+};
+
+// HUNT
+class Hunt : public Loom
+{
+public:
+    Hunt(string n, float k, float v)
+        : Loom(n, k, v, "liha") {}
+};
+
+// REBANE
+class Rebane : public Loom
+{
+public:
+    Rebane(string n, float k, float v)
+        : Loom(n, k, v, "liha") {}
+};
+
+// METSSIGA
+class Metssiga : public Loom
+{
+public:
+    Metssiga(string n, float k, float v)
+        : Loom(n, k, v, "liha") {}
+};
+
+// KITS
+class Hirv : public Loom
+{
+public:
+    Hirv(string n, float k, float v)
+        : Loom(n, k, v, "taim") {}
+};
+
+// METSIS
+class Metsis : public Loom
+{
+public:
+    Metsis(string n, float k, float v)
+        : Loom(n, k, v, "taim") {}
+};
