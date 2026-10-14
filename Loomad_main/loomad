@@ -1,0 +1,59 @@
+#pragma once
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Loom
+{
+protected:
+    string nimi;
+    float kaal;
+    float kiirus;
+    string toit;
+
+public:
+    Loom(string n, float k, float v, string t)
+    {
+        nimi = n;
+        kaal = k;
+        kiirus = v;
+        toit = t;
+    }
+
+    virtual string tyyp()
+    {
+        return "Loom";
+    }
+
+    void kohtub(Loom* loom2)
+    {
+        cout << "\n" << nimi << " kohtub " << loom2->nimi << " -> ";
+
+        bool loom1_liha = (toit == "liha");
+        bool loom2_liha = (loom2->toit == "liha");
+
+        // ründab ja võidab
+        if (loom1_liha && kaal > loom2->kaal && kiirus == loom2->kiirus)
+        {
+            cout << "murdis maha " << loom2->nimi << endl;
+        }
+
+        // põgeneb (lihasööja vs lihasööja)
+        else if (loom1_liha && (kaal < loom2->kaal || kiirus < loom2->kiirus) && loom2_liha)
+        {
+            cout << "jooksis " << loom2->nimi << " eest" << endl;
+        }
+
+        //taimtoiduline vs lihasööja
+        else if (!loom1_liha && loom2_liha)
+        {
+            cout << "jooksis minema" << endl;
+        }
+
+        //muu
+        else
+        {
+            cout << "ei juhtunud midagi" << endl;
+        }
+    }
+};
